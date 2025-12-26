@@ -1,0 +1,14 @@
+{
+  "global": {
+    "font": {
+      "family": {
+        "base": {
+          "value": "'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+        },
+        "brand": {
+          "value": "'Satoshi', system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+        }
+      }
+    }
+  }
+}

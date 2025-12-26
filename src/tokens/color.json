@@ -1,0 +1,38 @@
+{
+  "light": {
+    "color": {
+      "background": {
+        "primary": {
+          "value": "#020617"
+        },
+        "secondary": {
+          "value": "#0E172A"
+        }
+      },
+      "accent": {
+        "primary": {
+          "value": "#7C3AED"
+        },
+        "secondary": {
+          "value": "#22D3EE"
+        }
+      },
+      "text": {
+        "primary": {
+          "value": "#F8FAFC"
+        },
+        "secondary": {
+          "value": "#F8FAFC"
+        }
+      },
+      "glass": {
+        "primary": {
+          "value": "rgba(255, 255, 255, 0.09)"
+        },
+        "secondary": {
+          "value": "rgba(255, 255, 255, 0.15)"
+        }
+      }
+    }
+  }
+}

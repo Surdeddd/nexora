@@ -1,0 +1,17 @@
+{
+  "global": {
+    "z-index": {
+      "dropdown": {
+        "value": "1000"
+      },
+      "modal": {
+        "value": "2000"
+      },
+      "tooltip": {
+        "value": "3000"
+      }
+    }
+  }
+}
+
+
