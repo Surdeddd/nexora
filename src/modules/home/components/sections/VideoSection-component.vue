@@ -5,7 +5,7 @@
       <video
         ref="videoRef"
         class="video-section__video"
-        :src="'/video/falling-flower-v2.mp4'"
+        src="/video/falling-flower-v2.mp4?v=2"
         autoplay
         muted
         loop
