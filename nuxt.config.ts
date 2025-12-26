@@ -3,6 +3,9 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
   srcDir: 'src/',
+  dir: {
+    public: '../public',
+  },
   app: {
     head: {
       title: 'nexora - Разработка сайтов и цифровых продуктов',
