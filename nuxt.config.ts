@@ -2,10 +2,6 @@
 import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
-  srcDir: 'src/',
-  dir: {
-    public: '../public',
-  },
   app: {
     head: {
       title: 'nexora - Разработка сайтов и цифровых продуктов',
@@ -137,7 +133,7 @@ export default defineNuxtConfig({
     hostname: 'https://nexorastudio.site',
     gzip: true,
     routes: async () => {
-      const { servicesData } = await import('./src/constants/services');
+      const { servicesData } = await import('./constants/services');
       return servicesData.map(service => `/services/${service.slug}`);
     },
   },

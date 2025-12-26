@@ -62,7 +62,7 @@ StyleDictionary.registerFormat({
 });
 
 export default {
-  source: ['src/tokens/**/*.json'],
+  source: ['tokens/**/*.json'],
   platforms: {
     cssLight: {
       transforms: [
@@ -72,7 +72,7 @@ export default {
         'size/rem',
         'time/seconds',
       ],
-      buildPath: 'src/styles/generated/',
+      buildPath: 'styles/generated/',
       files: [
         {
           destination: 'tokens.css',
@@ -90,7 +90,7 @@ export default {
         'size/rem',
         'time/seconds',
       ],
-      buildPath: 'src/styles/generated/',
+      buildPath: 'styles/generated/',
       files: [
         {
           destination: 'tokens.dark.css',
@@ -102,7 +102,7 @@ export default {
     },
     cssBase: {
       transforms: ['attribute/cti', 'name/full-path', 'color/css', 'size/rem'],
-      buildPath: 'src/styles/generated/',
+      buildPath: 'styles/generated/',
       files: [
         {
           destination: 'tokens.base.css',
@@ -125,7 +125,7 @@ export default {
     },
     scss: {
       transformGroup: 'scss',
-      buildPath: 'src/styles/generated/',
+      buildPath: 'styles/generated/',
       files: [
         {
           destination: '_tokens.scss',
@@ -135,7 +135,7 @@ export default {
       ],
     },
     dts: {
-      buildPath: 'src/styles/generated/',
+      buildPath: 'styles/generated/',
       files: [
         {
           destination: 'tokens.d.ts',
@@ -144,7 +144,7 @@ export default {
       ],
     },
     dtsValues: {
-      buildPath: 'src/styles/generated/',
+      buildPath: 'styles/generated/',
       files: [
         {
           destination: 'tokens.values.ts',
