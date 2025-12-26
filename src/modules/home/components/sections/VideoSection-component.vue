@@ -12,7 +12,7 @@
         preload="auto"
         aria-label="Демонстрационное видео nexora"
       >
-        <source src="@/assets/video/falling-flower.mp4" type="video/mp4" />
+        <source src="/video/falling-flower.mp4" type="video/mp4" />
         Ваш браузер не поддерживает воспроизведение видео.
       </video>
     </div>
