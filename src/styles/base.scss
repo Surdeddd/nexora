@@ -1,0 +1,26 @@
+@import './fonts.scss';
+@import './generated/tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background-primary);
+  font-family: var(--font-family-base);
+  scroll-behavior: smooth;
+  &:not(.no-snap) {
+    scroll-snap-type: y mandatory;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background-primary);
+  font-family: var(--font-family-base);
+}

@@ -78,13 +78,13 @@
     </section>
   </template>
   
-<script setup lang="ts">
-import gsap from 'gsap'
+  <script setup lang="ts">
+  import gsap from 'gsap'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import LiquidGlassComponent from '~/components/LiquidGlass-component.vue'
 import { getCssVar } from '~/utils/getCssVar.utils'
-
-import webBackendInfra from '@/modules/home/assets/images/domains/web-backend-infrastructure.png'
+  
+  import webBackendInfra from '@/modules/home/assets/images/domains/web-backend-infrastructure.png'
 import webInterfacesUi from '@/modules/home/assets/images/domains/web-interfaces-ui.png'
 import webSystemsDesktop from '@/modules/home/assets/images/domains/web-systems-desktop.png'
 import webSystemsMobile from '@/modules/home/assets/images/domains/web-systems-mobile.png'
@@ -101,8 +101,8 @@ import webSystemsMobile from '@/modules/home/assets/images/domains/web-systems-m
       images: [webInterfacesUi, webBackendInfra],
     },
   ]
-
-const interpolateColor = (color1: string, color2: string, factor: number): string => {
+  
+  const interpolateColor = (color1: string, color2: string, factor: number): string => {
   const getColorValue = (color: string): string => {
     if (color.startsWith('var(')) {
       const varName = color.match(/var\(([^)]+)\)/)?.[1]?.trim()
@@ -116,21 +116,21 @@ const interpolateColor = (color1: string, color2: string, factor: number): strin
   
   const hex1 = getColorValue(color1).replace('#', '')
   const hex2 = getColorValue(color2).replace('#', '')
-  
-  const r1 = parseInt(hex1.substring(0, 2), 16)
-  const g1 = parseInt(hex1.substring(2, 4), 16)
-  const b1 = parseInt(hex1.substring(4, 6), 16)
-  
-  const r2 = parseInt(hex2.substring(0, 2), 16)
-  const g2 = parseInt(hex2.substring(2, 4), 16)
-  const b2 = parseInt(hex2.substring(4, 6), 16)
-  
-  const r = Math.round(r1 + (r2 - r1) * factor)
-  const g = Math.round(g1 + (g2 - g1) * factor)
-  const b = Math.round(b1 + (b2 - b1) * factor)
-  
-  return `#${[r, g, b].map(x => x.toString(16).padStart(2, '0')).join('')}`
-}
+    
+    const r1 = parseInt(hex1.substring(0, 2), 16)
+    const g1 = parseInt(hex1.substring(2, 4), 16)
+    const b1 = parseInt(hex1.substring(4, 6), 16)
+    
+    const r2 = parseInt(hex2.substring(0, 2), 16)
+    const g2 = parseInt(hex2.substring(2, 4), 16)
+    const b2 = parseInt(hex2.substring(4, 6), 16)
+    
+    const r = Math.round(r1 + (r2 - r1) * factor)
+    const g = Math.round(g1 + (g2 - g1) * factor)
+    const b = Math.round(b1 + (b2 - b1) * factor)
+    
+    return `#${[r, g, b].map(x => x.toString(16).padStart(2, '0')).join('')}`
+  }
   
   const dragProgress = ref(0)
   
@@ -159,136 +159,136 @@ const interpolateColor = (color1: string, color2: string, factor: number): strin
     }
   }
 
-const handleImageHover = (_e: MouseEvent, type: 'old' | 'new', index: number, isEntering: boolean) => {
-  const image = type === 'old' ? oldImages.value[index] : newImages.value[index]
-  if (!image) return
+  const handleImageHover = (_e: MouseEvent, type: 'old' | 'new', index: number, isEntering: boolean) => {
+    const image = type === 'old' ? oldImages.value[index] : newImages.value[index]
+    if (!image) return
 
-  if (isEntering) {
-    gsap.to(image, {
-      scale: 1.03,
-      y: -4,
-      duration: 0.5,
-      ease: 'power2.out',
-    })
-    
-    gsap.to(image, {
-      filter: 'brightness(1.08)',
-      boxShadow: '0 20px 40px rgba(124, 58, 237, 0.3), 0 0 30px rgba(34, 211, 238, 0.2)',
-      duration: 0.5,
-      ease: 'power2.out',
-    })
-  } else {
-    gsap.to(image, {
-      scale: 1,
-      y: 0,
-      duration: 0.4,
-      ease: 'power2.out',
-    })
-    
-    const shadowValue = window.innerWidth >= 1024 
-      ? '0 30px 60px rgba(0, 0, 0, 0.6)'
-      : window.innerWidth >= 640
-      ? '0 20px 40px rgba(0, 0, 0, 0.5)'
-      : '0 12px 24px rgba(0, 0, 0, 0.4)'
-    
-    gsap.to(image, {
-      filter: 'brightness(1)',
-      boxShadow: shadowValue,
-      duration: 0.4,
-      ease: 'power2.out',
-    })
+    if (isEntering) {
+      gsap.to(image, {
+        scale: 1.03,
+        y: -4,
+        duration: 0.5,
+        ease: 'power2.out',
+      })
+      
+      gsap.to(image, {
+        filter: 'brightness(1.08)',
+        boxShadow: '0 20px 40px rgba(124, 58, 237, 0.3), 0 0 30px rgba(34, 211, 238, 0.2)',
+        duration: 0.5,
+        ease: 'power2.out',
+      })
+    } else {
+      gsap.to(image, {
+        scale: 1,
+        y: 0,
+        duration: 0.4,
+        ease: 'power2.out',
+      })
+      
+      const shadowValue = window.innerWidth >= 1024 
+        ? '0 30px 60px rgba(0, 0, 0, 0.6)'
+        : window.innerWidth >= 640
+        ? '0 20px 40px rgba(0, 0, 0, 0.5)'
+        : '0 12px 24px rgba(0, 0, 0, 0.4)'
+      
+      gsap.to(image, {
+        filter: 'brightness(1)',
+        boxShadow: shadowValue,
+        duration: 0.4,
+        ease: 'power2.out',
+      })
+    }
   }
-}
 
-const handleColor = computed(() => {
+  const handleColor = computed(() => {
   return interpolateColor('var(--color-accent-primary)', 'var(--color-accent-secondary)', dragProgress.value)
-})
-
-const handleShadowColor = computed(() => {
-  const color = handleColor.value
-  const hex = color.replace('#', '')
-  const r = parseInt(hex.substring(0, 2), 16)
-  const g = parseInt(hex.substring(2, 4), 16)
-  const b = parseInt(hex.substring(4, 6), 16)
-  return `rgba(${r}, ${g}, ${b}, 0.6)`
-})
+  })
   
-const playAnimations = () => {
-  if (hasAnimated) return
-  hasAnimated = true
+  const handleShadowColor = computed(() => {
+    const color = handleColor.value
+    const hex = color.replace('#', '')
+    const r = parseInt(hex.substring(0, 2), 16)
+    const g = parseInt(hex.substring(2, 4), 16)
+    const b = parseInt(hex.substring(4, 6), 16)
+    return `rgba(${r}, ${g}, ${b}, 0.6)`
+  })
   
-  if (switcher.value && title.value && handle.value) {
-    gsap.to(switcher.value, {
-      opacity: 1,
-      y: 0,
-      duration: 0.5,
-      ease: 'power3.out',
-      delay: 0.1,
-    })
+  const playAnimations = () => {
+    if (hasAnimated) return
+    hasAnimated = true
     
-    gsap.to(title.value, {
-      opacity: 1,
-      duration: 0.5,
-      ease: 'power2.out',
-      delay: 0.2,
-    })
+    if (switcher.value && title.value && handle.value) {
+      gsap.to(switcher.value, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'power3.out',
+        delay: 0.1,
+      })
+      
+      gsap.to(title.value, {
+        opacity: 1,
+        duration: 0.5,
+        ease: 'power2.out',
+        delay: 0.2,
+      })
+      
+      gsap.to(handle.value, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.4,
+        ease: 'back.out(1.7)',
+        delay: 0.3,
+      })
+    }
     
-    gsap.to(handle.value, {
-      opacity: 1,
-      scale: 1,
-      duration: 0.4,
-      ease: 'back.out(1.7)',
-      delay: 0.3,
-    })
+    if (content.value) {
+      gsap.to(content.value, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power3.out',
+        delay: 0.5,
+        onComplete: () => {
+          oldImages.value.forEach((img, index) => {
+            if (img) {
+              gsap.fromTo(
+                img,
+                { opacity: 0, y: 60, scale: 0.9 },
+                {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  duration: 0.5,
+                  ease: 'power3.out',
+                  delay: index * 0.1,
+                }
+              )
+            }
+          })
+          
+          newImages.value.forEach((img, index) => {
+            if (img) {
+              gsap.fromTo(
+                img,
+                { opacity: 0, y: 60, scale: 0.9 },
+                {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  duration: 0.5,
+                  ease: 'power3.out',
+                  delay: 0.1 + index * 0.1,
+                }
+              )
+            }
+          })
+        },
+      })
+    }
   }
   
-  if (content.value) {
-    gsap.to(content.value, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: 'power3.out',
-      delay: 0.5,
-      onComplete: () => {
-        oldImages.value.forEach((img, index) => {
-          if (img) {
-            gsap.fromTo(
-              img,
-              { opacity: 0, y: 60, scale: 0.9 },
-              {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.5,
-                ease: 'power3.out',
-                delay: index * 0.1,
-              }
-            )
-          }
-        })
-        
-        newImages.value.forEach((img, index) => {
-          if (img) {
-            gsap.fromTo(
-              img,
-              { opacity: 0, y: 60, scale: 0.9 },
-              {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.5,
-                ease: 'power3.out',
-                delay: 0.1 + index * 0.1,
-              }
-            )
-          }
-        })
-      },
-    })
-  }
-}
-
-onMounted(async () => {
+  onMounted(async () => {
     if (switcher.value && title.value && handle.value) {
       gsap.set(switcher.value, { opacity: 0, y: -30 })
       gsap.set(title.value, { opacity: 0 })
@@ -311,7 +311,7 @@ onMounted(async () => {
       }
     })
     
-  if (section.value) {
+    if (section.value) {
       observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -332,8 +332,8 @@ onMounted(async () => {
     if (!track.value || !handle.value) return
   
   // @ts-ignore - GSAP Draggable import case sensitivity issue
-  const Draggable = (await import('gsap/Draggable')).default
-  gsap.registerPlugin(Draggable)
+    const Draggable = (await import('gsap/Draggable')).default
+    gsap.registerPlugin(Draggable)
   
     const updateBounds = (): number => {
       if (!track.value || !handle.value) return 0
@@ -392,7 +392,7 @@ onMounted(async () => {
       },
     })
   
-  resizeHandler = () => {
+    resizeHandler = () => {
       if (draggableInstance && draggableInstance[0]) {
         const newMaxX = updateBounds()
         if (newMaxX > 0) {
