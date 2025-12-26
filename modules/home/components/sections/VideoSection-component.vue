@@ -5,7 +5,7 @@
       <video
         ref="videoRef"
         class="video-section__video"
-        src="/video/falling-flower.mp4"
+        :src="videoSrc"
         autoplay
         muted
         loop
@@ -19,6 +19,7 @@
 
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
+import videoSrc from '@/assets/video/falling-flower.mp4'
 
 const videoRef = ref<HTMLVideoElement | null>(null)
 const sectionRef = ref<HTMLElement | null>(null)
