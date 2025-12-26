@@ -3,18 +3,16 @@
     <div class="video-section__container">
       <div class="video-section__overlay" aria-hidden="true"></div>
       <video
-        ref="videoRef"
-        class="video-section__video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-        aria-label="Демонстрационное видео nexora"
-      >
-        <source src="/video/falling-flower.mp4" type="video/mp4" />
-        Ваш браузер не поддерживает воспроизведение видео.
-      </video>
+  ref="videoRef"
+  class="video-section__video"
+  :src="'/video/falling-flower.mp4'"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto"
+  aria-label="Демонстрационное видео nexora"
+></video>
     </div>
   </section>
 </template>
